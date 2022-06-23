@@ -11,10 +11,10 @@ export default {
   props: ["type", "icon", "to", "href"],
   methods: {
     async goToLink() {
-      let navigation;
-      if (this.to) {
-        navigation = await this.$router.push(this.to);
-      }
+      // let navigation;
+      // if (this.to) {
+      //   navigation = await this.$router.push(this.to);
+      // }
       if (this.href) {
         location.href = this.href;
         setTimeout(() => {
