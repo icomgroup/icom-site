@@ -1,0 +1,159 @@
+<template>
+  <section class="services" @mouseover="slide($event)">
+    <div id="slider-controls">
+      <button @click="previous()">
+        <i class="fas fa-angle-right"></i>
+      </button>
+      <button @click="next()">
+        <i class="fas fa-angle-left"></i>
+      </button>
+    </div>
+    <div
+      id="sections"
+      :style="`--current-step: 0; --step-amount: ${stepAmount}px`"
+    >
+      <s-section
+        v-for="(section, index) in sections"
+        :key="`${section}-${section.name}`"
+        :section="section"
+        :data-index="index + 1"
+        :style="`--far-from-start: ${index * 340 + 160}px`"
+        :index="index"
+      />
+    </div>
+  </section>
+</template>
+
+<script>
+import SSection from "./SSection.vue";
+export default {
+  name: "slider",
+  components: { SSection },
+  data() {
+    return {
+      sections: this.$store.state.sections,
+      currentStep: 0,
+      stepAmount: 0,
+      STEP_NUMBERS: 0,
+    };
+  },
+  watch: {
+    currentStep(newStep) {
+      document
+        .getElementById("sections")
+        .style.setProperty("--current-step", newStep);
+    },
+  },
+  methods: {
+    slide(e) {
+      if (e.clientX < 20) {
+        this.next();
+      }
+    },
+    setSteps() {
+      const SECTION_WIDTH = 340;
+      const ALL_SECTIONS_WIDTH = SECTION_WIDTH * this.sections.length;
+      const SLIDER_CONTROL_WIDTH = 160;
+      const SHOW_AREA = window.innerWidth - SLIDER_CONTROL_WIDTH;
+      const MAX_HIDDEN_AREA = ALL_SECTIONS_WIDTH - SHOW_AREA;
+      this.STEP_NUMBERS = Math.floor(MAX_HIDDEN_AREA / SECTION_WIDTH);
+      this.stepAmount = MAX_HIDDEN_AREA / this.STEP_NUMBERS;
+    },
+    next() {
+      if (window.innerWidth < 1024) return;
+      this.setSteps();
+      if (this.currentStep < this.STEP_NUMBERS) {
+        this.currentStep++;
+      }
+    },
+    previous() {
+      if (this.currentStep > 0) {
+        this.currentStep--;
+      }
+    },
+  },
+  mounted() {
+    this.setSteps();
+    window.addEventListener("resize", this.setSteps);
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+section.services {
+  background-color: #27153d;
+  width: 100%;
+  overflow: hidden;
+  margin: 20px 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  position: relative;
+  div#sections {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    right: 0;
+    transition: all 0.2s ease-out;
+  }
+  div#slider-controls {
+    z-index: 4;
+    display: flex;
+    flex-shrink: 0;
+    width: 160px;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 0;
+    padding-right: 20px;
+    background: linear-gradient(
+      220.1deg,
+      rgba(32, 23, 72, 1) 0%,
+      rgba(75, 43, 132, 1) 100%
+    );
+    &::after {
+      display: none;
+    }
+    button {
+      width: 30px;
+      height: 30px;
+      background: none;
+      padding: 10px;
+      margin: 10px;
+      border: 2px solid white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      transition: all 0.1s ease;
+      &:last-of-type {
+        transform: scale(1.2);
+        border-color: var(--accent);
+      }
+      &:hover {
+        transform: scale(1.2);
+        border-color: var(--accent);
+      }
+    }
+  }
+}
+
+@media (max-width: 1020px) {
+  section.services {
+    div#sections {
+      flex-flow: row wrap;
+      section {
+        justify-content: center;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+        flex-grow: 1;
+        &.extended {
+          transform: translate(0);
+          height: 100vh;
+        }
+      }
+    }
+    & > div:not(#sections) {
+      display: none;
+    }
+  }
+}
+</style>
