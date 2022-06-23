@@ -139,7 +139,7 @@ setTimeout(async () => {
   setTimeout(() => {
     repeatedNum = 10;
     init();
-  }, 1000);
+  }, 500);
 
   flag = true;
 }, 1);
@@ -231,8 +231,8 @@ const tick = () => {
     let backSpeed = 0;
     let logoSpeed = 0;
     if (sizes.width > 800) {
-      backSpeed = 0.5;
-      logoSpeed = 8;
+      backSpeed = 1.1;
+      logoSpeed = 3.1;
     } else {
       backSpeed = 1.5;
       logoSpeed = 2;
