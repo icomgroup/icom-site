@@ -66,6 +66,7 @@ function HEXA_to_HSLA(hex) {
     }
     let [h, s, l, _a] = RGB_to_HSLA(`rgba(${r}, ${g}, ${b}, ${a})`);
     a = (a / 255).toFixed(3);
+    let an = _a;
     return [h, s, l, a];
 }
 function String_HSLA_to_HSLA(hsla) {
