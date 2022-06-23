@@ -279,18 +279,18 @@ const tick = () => {
 
 tick();
 
-$(document).bind("keydown keypress", function (e) {
-  if (e.which == 8) {
-    // 8 == backspace
-    document.location.href = "/";
-  }
-});
+// $(document).bind("keydown keypress", function (e) {
+//   if (e.which == 8) {
+//     // 8 == backspace
+//     document.location.href = "/";
+//   }
+// });
 
-window.addEventListener(
-  "popstate",
-  function (event) {
-    document.location.href = "/";
-    history.pushState(null, null, document.location.href);
-  },
-  false
-);
+// window.addEventListener(
+//   "popstate",
+//   function (event) {
+//     document.location.href = "/";
+//     history.pushState(null, null, document.location.href);
+//   },
+//   false
+// );
