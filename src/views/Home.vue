@@ -27,8 +27,8 @@
           <m-button type="bordered" href="#services">تصفح خدماتنا</m-button>
         </div>
       </div>
-      <div  style="margin-top: 40px">
-        <canvas style="max-width:100%!important;width: inherit !important;max-height:100%!important;height: inherit !important;position: static;"   class="webgl"></canvas>
+      <div  >
+        <canvas id="webgl" style="max-width:100%!important;width: inherit !important;max-height:900px!important;height: inherit !important;position: static;margin-top: 0px !important;"   class="webgl"></canvas>
 
         
       

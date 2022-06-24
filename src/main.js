@@ -73,6 +73,8 @@ setTimeout(async () => {
       .getElementsByClassName("titles")[0]
       .setAttribute("style", "margin-top: -550px;padding-right: 20px;");
 
+     
+
     isMobile = true;
 
     sizes.width = window.innerWidth;
@@ -227,7 +229,11 @@ let changed = false;
 let runCount = 0;
 
 const tick = () => {
+  
+  
+
   if (ready) {
+    // document.getElementById('webgl').style.height= '666px !important';
     let backSpeed = 0;
     let logoSpeed = 0;
     if (sizes.width > 800) {
