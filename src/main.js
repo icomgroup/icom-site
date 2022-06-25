@@ -6,17 +6,17 @@ import store from "./store";
 
 import { m } from "./m-labs";
 
-// $(document).keydown(function (event) {
-//     if (event.keyCode == 123) { // Prevent F12
-//         return false;
-//     } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I
-//         return false;
-//     }
-// });
+$(document).keydown(function (event) {
+    if (event.keyCode == 123) { // Prevent F12
+        return false;
+    } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I
+        return false;
+    }
+});
 
-// $(document).on("contextmenu", function (e) {
-//     e.preventDefault();
-// });
+$(document).on("contextmenu", function (e) {
+    e.preventDefault();
+});
 
 createApp(App).use(store).use(router).use(m).mount("#app");
 
@@ -44,9 +44,7 @@ sizes = {
 setTimeout(async () => {
   // Canvas
   canvas = document.querySelector("canvas.webgl");
-  // document.getElementById('webgl').style.width = window.innerWidth;
-  // let dataUrl = canvas.toDataURL();
-  // document.getElementById('www').style.background='url('+dataUrl+')'
+
   /**
    * Sizes
    */
@@ -81,15 +79,13 @@ setTimeout(async () => {
 
     sizes.width = window.innerWidth;
     sizes.height = window.innerHeight;
-    // console.log( document.getElementsByClassName("titles"));
-
+    
     // Update camera
     camera.aspect = sizes.width / sizes.height;
     camera.updateProjectionMatrix();
     camera.position.x -= 0.3;
     camera.rotation.x -= 0.121;
-    // camera.lookAt( 0, 1.8, 0 );
-    // camera.rotation.y -= 0.121;
+ 
     // Update renderer
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -241,7 +237,6 @@ const tick = () => {
   
 
   if (ready) {
-    // document.getElementById('webgl').style.height= '666px !important';
     let backSpeed = 0;
     let logoSpeed = 0;
     if (sizes.width > 800) {
@@ -293,48 +288,15 @@ const tick = () => {
 
 tick();
 
-// $(document).bind("keydown keypress", function (e) {
-//   if (e.which == 8) {
-//     // 8 == backspace
-//     document.location.href = "/";
-//   }
-// });
 
-// window.addEventListener(
-//   "popstate",
-//   function (event) {
-//     document.location.href = "/";
-//     history.pushState(null, null, document.location.href);
-//   },
-//   false
-// );
 
 
 window.addEventListener('popstate', function(event) {
-  // console.log("window" , window);
-  // if (window.performance && window.performance.navigation.type == window.performance.navigation.TYPE_BACK_FORWARD) {
-  //   alert('hello world');
-  // }
+
   
   if(!(this.window.location.href.indexOf('#') > -1) ){
     this.window.location.href = '/';
   }
-  // The popstate event is fired each time when the current history entry changes.
-  // console.log("window.location.pathname " ,event);
-  // console.log("window.location.pathname " ,window.location.pathname);
-  // var r = confirm("You pressed a Back button! Are you sure?!");
-
-  // if (r == true) {
-  //     // Call Back button programmatically as per user confirmation.
-  //     history.back();
-  //     // Uncomment below line to redirect to the previous page instead.
-  //     // window.location = document.referrer // Note: IE11 is not supporting this.
-  // } else {
-  //     // Stay on the current page.
-  //     history.pushState(null, null, window.location.pathname);
-  // }
-
-  // history.pushState(null, null, window.location.pathname);
 
 }, false);
 
