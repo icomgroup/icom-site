@@ -73,7 +73,7 @@ setTimeout(async () => {
   if (sizes.width < 800) {
     document
       .getElementsByClassName("titles")[0]
-      .setAttribute("style", "margin-top: 120px;position: relative;");
+      .setAttribute("style", "margin-top: 130px;position: relative;");
 
      
 
@@ -87,7 +87,8 @@ setTimeout(async () => {
     camera.aspect = sizes.width / sizes.height;
     camera.updateProjectionMatrix();
     camera.position.x -= 0.3;
-    camera.rotation.x -= 0.131;
+    camera.rotation.x -= 0.121;
+    // camera.lookAt( 0, 1.8, 0 );
     // camera.rotation.y -= 0.121;
     // Update renderer
     renderer.setSize(sizes.width, sizes.height);
@@ -145,7 +146,7 @@ setTimeout(async () => {
   setTimeout(() => {
     repeatedNum = 10;
     init();
-  }, 500);
+  }, 400);
 
   flag = true;
 }, 1);
@@ -244,8 +245,8 @@ const tick = () => {
     let backSpeed = 0;
     let logoSpeed = 0;
     if (sizes.width > 800) {
-      backSpeed = 1.1;
-      logoSpeed = 3.1;
+      backSpeed = 1;
+      logoSpeed = 3.2;
     } else {
       backSpeed = 1.5;
       logoSpeed = 2;
@@ -307,3 +308,5 @@ tick();
 //   },
 //   false
 // );
+
+
