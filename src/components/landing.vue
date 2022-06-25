@@ -36,9 +36,10 @@ export default {
   align-content: center;
   align-items: center;
   justify-content: space-between;
-  padding: 0 3px 0;
+  padding: 0 6vw 0;
   .titles {
     max-width: 100%;
+    flex-flow: row wrap;
     .MBUTTON {
       width: 140px;
       font-weight: normal;
@@ -49,7 +50,7 @@ export default {
   h2 {
     text-align: right;
     margin: 2em 0 0;
-    width: 600px;
+    // width: 600px;
     max-width: 90%;
   }
   h3 {

@@ -1,5 +1,7 @@
 <template>
+<canvas id="webgl" style="position: absolute;left:0px; max-height:900px!important; max-height:inherit;"   class="webgl"></canvas>
   <div class="home page">
+
     <landing :section="{}">
       <ul class="social-links">
         <li>
@@ -19,8 +21,8 @@
         </li>
       </ul>
       
-      <div class="titles" style="position: absolute; margin-top: 40px;padding-right:6rem;">
-        <h2>هل تريد النهوض بعلامتك التجارية نحو التميز !</h2>
+      <div class="titles" style="    position: absolute; margin-top: 40px;">
+        <h2 style="width: 600px !important;">هل تريد النهوض بعلامتك التجارية نحو التميز !</h2>
         <h3>icom ستساعدك لتحقيق اهدافك</h3>
         <div class="buttons">
           <m-button href="#contact">اتصل بنا</m-button>
@@ -28,7 +30,7 @@
         </div>
       </div>
       <div  >
-        <canvas id="webgl" style="max-width:100%!important;width: inherit !important;max-height:900px!important;height: inherit !important;position: static;margin-top: 0px !important;"   class="webgl"></canvas>
+        <!-- <canvas id="webgl" style="max-width:103%!important;width: inherit !important;max-height:900px!important;height: inherit !important;position: static;"   class="webgl"></canvas> -->
 
         
       

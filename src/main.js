@@ -44,7 +44,9 @@ sizes = {
 setTimeout(async () => {
   // Canvas
   canvas = document.querySelector("canvas.webgl");
-
+  // document.getElementById('webgl').style.width = window.innerWidth;
+  // let dataUrl = canvas.toDataURL();
+  // document.getElementById('www').style.background='url('+dataUrl+')'
   /**
    * Sizes
    */
@@ -69,9 +71,9 @@ setTimeout(async () => {
 
   let isMobile = false;
   if (sizes.width < 800) {
-    document
-      .getElementsByClassName("titles")[0]
-      .setAttribute("style", "margin-top: -550px;padding-right: 20px;");
+    // document
+    //   .getElementsByClassName("titles")[0]
+    //   .setAttribute("style", "margin-top: -550px;");
 
      
 
@@ -202,6 +204,7 @@ let companyName;
 window.addEventListener("resize", () => {
   if (ready) {
     // Update sizes
+    
     sizes.width = window.innerWidth;
     sizes.height = window.innerHeight;
 
