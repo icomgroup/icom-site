@@ -87,6 +87,7 @@ setTimeout(async () => {
     camera.aspect = sizes.width / sizes.height;
     camera.updateProjectionMatrix();
     camera.position.x -= 0.3;
+    camera.position.y -= 1;
     // Update renderer
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
