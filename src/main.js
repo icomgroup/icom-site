@@ -73,7 +73,7 @@ setTimeout(async () => {
   if (sizes.width < 800) {
     document
       .getElementsByClassName("titles")[0]
-      .setAttribute("style", "margin-top: 130px;position: relative;");
+      .setAttribute("style", "margin-top: 150px;position: relative;");
 
      
 
@@ -308,5 +308,34 @@ tick();
 //   },
 //   false
 // );
+
+
+window.addEventListener('popstate', function(event) {
+  // console.log("window" , window);
+  // if (window.performance && window.performance.navigation.type == window.performance.navigation.TYPE_BACK_FORWARD) {
+  //   alert('hello world');
+  // }
+  
+  if(!(this.window.location.href.indexOf('#') > -1) ){
+    this.window.location.href = '/';
+  }
+  // The popstate event is fired each time when the current history entry changes.
+  // console.log("window.location.pathname " ,event);
+  // console.log("window.location.pathname " ,window.location.pathname);
+  // var r = confirm("You pressed a Back button! Are you sure?!");
+
+  // if (r == true) {
+  //     // Call Back button programmatically as per user confirmation.
+  //     history.back();
+  //     // Uncomment below line to redirect to the previous page instead.
+  //     // window.location = document.referrer // Note: IE11 is not supporting this.
+  // } else {
+  //     // Stay on the current page.
+  //     history.pushState(null, null, window.location.pathname);
+  // }
+
+  // history.pushState(null, null, window.location.pathname);
+
+}, false);
 
 
