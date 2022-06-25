@@ -50,7 +50,7 @@ export default {
   h2 {
     text-align: right;
     margin: 2em 0 0;
-    width: 680px;
+    width: 630px;
     max-width: 90%;
   }
   h3 {
