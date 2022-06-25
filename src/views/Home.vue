@@ -1,5 +1,5 @@
 <template>
-<canvas id="webgl" style="position: absolute;left:0px; max-height:900px!important; max-height:inherit;"   class="webgl"></canvas>
+<canvas id="webgl" style="position: absolute;left:0px; max-height:900px!important; "   class="webgl"></canvas>
   <div class="home page">
 
     <landing :section="{}">
@@ -21,7 +21,7 @@
         </li>
       </ul>
       
-      <div class="titles" style="    position: fixed; margin-top: 40px;">
+      <div class="titles" style="    position: relative; margin-top: 40px;">
         <h2 style="width: 600px !important;">هل تريد النهوض بعلامتك التجارية نحو التميز !</h2>
         <h3>icom ستساعدك لتحقيق اهدافك</h3>
         <div class="buttons">
