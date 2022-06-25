@@ -71,9 +71,9 @@ setTimeout(async () => {
 
   let isMobile = false;
   if (sizes.width < 800) {
-    // document
-    //   .getElementsByClassName("titles")[0]
-    //   .setAttribute("style", "margin-top: -550px;");
+    document
+      .getElementsByClassName("titles")[0]
+      .setAttribute("style", "margin-top: 120px;position: relative;");
 
      
 
@@ -87,7 +87,8 @@ setTimeout(async () => {
     camera.aspect = sizes.width / sizes.height;
     camera.updateProjectionMatrix();
     camera.position.x -= 0.3;
-    camera.position.y -= 1;
+    camera.rotation.x -= 0.131;
+    // camera.rotation.y -= 0.121;
     // Update renderer
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -181,7 +182,7 @@ async function init() {
 
       if (sizes.width < 900) {
         obj.children[index].position.x += 3;
-        obj.children[index].position.y -= 0.8;
+        obj.children[index].position.y -= 0.2;
 
       }
 
