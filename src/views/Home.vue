@@ -21,7 +21,7 @@
         </li>
       </ul>
       
-      <div class="titles" style="    position: absolute; margin-top: 40px;">
+      <div class="titles" style="    position: fixed; margin-top: 40px;">
         <h2 style="width: 600px !important;">هل تريد النهوض بعلامتك التجارية نحو التميز !</h2>
         <h3>icom ستساعدك لتحقيق اهدافك</h3>
         <div class="buttons">

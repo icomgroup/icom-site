@@ -181,6 +181,8 @@ async function init() {
 
       if (sizes.width < 900) {
         obj.children[index].position.x += 3;
+        obj.children[index].position.y -= 0.8;
+
       }
 
       obj.children[index].position.z = 13 * repeatedNum;
