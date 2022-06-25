@@ -73,7 +73,7 @@ setTimeout(async () => {
   if (sizes.width < 800) {
     document
       .getElementsByClassName("titles")[0]
-      .setAttribute("style", "margin-top: 150px;position: relative;");
+      .setAttribute("style", "margin-top: 180px;position: relative;");
 
      
 
