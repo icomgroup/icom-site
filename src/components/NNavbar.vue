@@ -2,7 +2,7 @@
   <nav>
   
       <a href="/">
-      <img src="../assets/logo.svg" /></a>
+      <img src="../assets/logo.svg" alt="Icom's Logo"/></a>
     
     <transition name="fade-top">
       <ul class="nav_links" v-if="menu_shown || !mobileScreen">
