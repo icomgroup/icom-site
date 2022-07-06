@@ -34,7 +34,7 @@
           <m-button
             v-if="mobileScreen"
             
-            href="/#contact"
+            href="https://icom-digital.net/"
             class="contact-us"
             >اتصل بنا</m-button
           >
