@@ -66,7 +66,7 @@
       v-if="!mobileScreen"
       type="bordered"
       class="contact-us"
-      href="/#contact"
+      href="https://icom-digital.net/"
       
       >اتصل بنا</m-button
     >
