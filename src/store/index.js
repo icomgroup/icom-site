@@ -6,7 +6,7 @@ export default createStore({
       {
         name: "تصميم وبرمجة مواقع الويب",
         ename: "Website Development",
-        poster: require("../assets/posters/web.png"),
+        poster: require("../assets/posters/web.webp"),
         icon: require("../assets/icons/web.gif"),
         description:
           "تعمل شركتنا على تصميم المواقع وبرمجتها بشكل احترافي، والتي تكون متوافقة مع مختلف الأجهزة الإلكترونية سواء كانت (كمبيوتر، موبايل، تابليت).",
@@ -145,7 +145,7 @@ export default createStore({
       {
         name: "تصميم وبرمجة تطبيقات الهاتف المحمول",
         ename: "Mobile Application Development",
-        poster: require("../assets/posters/mobile.png"),
+        poster: require("../assets/posters/mobile.webp"),
         icon: require("../assets/icons/mobile.gif"),
         description: `
         نقوم دائمًا بتصميم تطبيقات الهاتف المحمول بشكل مميز واحترافي للغاية، وينتج ذلك عن وجود فريق عمل يتمتع بخبرة واحترافية كبيرة في تصميم مختلف التطبيقات سواء كانت (تطبيقات 
@@ -218,7 +218,7 @@ export default createStore({
       {
         name: "التسويق عبر منصات التواصل الاجتماعي",
         ename: "Socialmedia Marketing",
-        poster: require("../assets/posters/social.png"),
+        poster: require("../assets/posters/social.webp"),
         icon: require("../assets/icons/social.gif"),
         description:
           "شركة ICOM يمكنك أن تطلق عليها هي الظهر والسند لمختلف العلامات التجارية، فمنذ بداية تأسيس مشروعك، وبخطوات بسيطة وبإبداع كبير تستطيع الشركة أن تنقل علامتك نقلة تاريخية، تجعلها تنافس الكبار، فهذا الآمر ناتج عن فريق عمل قوي ومتعاون يهدف لتحقيق النجاحات من خلال التسويق عبر منصات التواصل الاجتماعي مثل: (فيسبوك، انستغرام، سناب شات، إلخ..",
@@ -344,7 +344,7 @@ export default createStore({
       {
         name: "تصميم العلامة التجارية والهوية البصرية",
         ename: "Branding & Identity",
-        poster: require("../assets/posters/branding.png"),
+        poster: require("../assets/posters/branding.webp"),
         icon: require("../assets/icons/branding.gif"),
         description:
           "سواء كنت تقرر اسمًا لمنتج أو خدمة أو شعار جديد، فأنت بحاجة إلى إنشاء أداة تتميز بها عن منافسيك. أنت بحاجة إلى أكثر من مجرد اسم ونموذج وطباعة. تتعلق العلامة التجارية بفهم السمات التي يقدرها جمهورك المستهدف في الأعمال التجارية ومزج قيم وشخصيتك التجارية مع هذه السمات. الفكرة هي عرض ما يدور حوله عملك بطريقة تتواصل مع جمهورك المستهدف، وهذا تجده دائمًا في ICOM ",
@@ -458,7 +458,7 @@ export default createStore({
       {
         name: "تهيئة محركات البحث ",
         ename: "Search Engine Optimization",
-        poster: require("../assets/posters/seo.png"),
+        poster: require("../assets/posters/seo.webp"),
         icon: require("../assets/icons/seo.gif"),
         description:
           "أي موقع أو متجر إلكتروني يحتاج إلى بعض الطرق والخوارزميات لكي تساعده على الظهور في محركات بحث جوجل، وهذا يتم في شركتنا ICOM  من خلال عمل قوي في الـ (SEO) يستطيع بالنهوض إلى موقعك تدريجياً إلى الصفحة الأولى في محركات بحث جوجل.",
@@ -516,7 +516,7 @@ export default createStore({
       {
         name: "تصميم داخلي",
         ename: "Interior Design",
-        poster: require("../assets/posters/interior.png"),
+        poster: require("../assets/posters/interior.webp"),
         icon: require("../assets/icons/interior.gif"),
         description:
           "التصميم الداخلي أو الـ (Interior Design) هو فن لا يُستغنى عنه، لذلك فإننا نقدم حلولاً معمارية عصرية ومبتكرة، تعمل على المساعدة في بناء كل مساحة بالطريقة التي تلائمها، نحن نستغل كل المساحات لنخرجها بأفضل صورة ممكنة، معنا يمكن تحويل الا شيء إلى كل شيء",
@@ -552,7 +552,7 @@ export default createStore({
       {
         name: "الدعم الفني",
         ename: "Technical Support",
-        poster: require("../assets/posters/support.png"),
+        poster: require("../assets/posters/support.webp"),
         icon: require("../assets/icons/support.gif"),
         description:
           "إن خدمة ما بعد البيع هي أهم ما يميزنا، نحن نمتلك فريق دعم فني متكامل ومتوفر على مدار الساعة لتقديم حلول لكافة المشاكل التي من الممكن أن تواجهها، معنا أنت في أمان.",
