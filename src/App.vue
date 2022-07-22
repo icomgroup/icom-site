@@ -147,6 +147,9 @@ button {
 			margin: 4px;
 		}
 	}
+	&.close.sections {
+		position: absolute;
+	}
 	&.slide-button {
 		border-radius: 0 !important;
 		margin: 0 20px;

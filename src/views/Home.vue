@@ -25,9 +25,7 @@
 			</ul>
 
 			<div class="titles">
-				<h2 style="width: 600px !important">
-					هل تريد النهوض بعلامتك التجارية نحو التميز !
-				</h2>
+				<h2>هل تريد النهوض بعلامتك التجارية نحو التميز !</h2>
 				<h3>icom ستساعدك لتحقيق اهدافك</h3>
 				<div class="buttons">
 					<m-button href="#contact">اتصل بنا</m-button>
@@ -414,7 +412,8 @@ h6 {
 }
 .titles {
 	z-index: 3;
-	max-width: 440px !important;
+	width: calc(100% - 25px);
+	max-width: 400px !important;
 }
 @media (max-width: 951px) {
 	.webgl {

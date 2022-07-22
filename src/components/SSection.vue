@@ -35,7 +35,7 @@
 			class="section-body"
 			v-if="section.paragraphs && section.paragraphs.length > 0"
 		>
-			<button class="close" @click="extend($event, false)">
+			<button class="close sections" @click="extend($event, false)">
 				<i class="fas fa-times"></i>
 			</button>
 			<div
