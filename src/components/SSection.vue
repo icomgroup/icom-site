@@ -44,6 +44,15 @@
 				v-html="paragraph"
 			></div>
 		</article>
+		<article
+			v-else
+			class="section-body"
+			style="text-align: center; font-size: 1.5rem; padding-bottom: 40px"
+		>
+			<button class="close sections" @click="extend($event, false)">
+				<i class="fas fa-times"></i></button
+			>سيتم تزويدك بالتفاصيل قريبا
+		</article>
 	</section>
 </template>
 
@@ -201,7 +210,7 @@ section.extended {
 	border: 1px solid $color_text;
 	overflow: auto;
 	header.section-header {
-		height: 80%;
+		height: 90%;
 		&::before {
 			display: none;
 		}
