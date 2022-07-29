@@ -20,7 +20,7 @@
 			<p class="short-p">
 				{{ `${section.description.slice(0, 110)}...` }}
 			</p>
-			<m-button class="slide-button" @click="extend($event, true)">
+			<m-button class="slide-button" @click="$emit('expand')">
 				اقرأ أكثر
 			</m-button>
 			<button
@@ -31,28 +31,55 @@
 				<i class="fas fa-times"></i>
 			</button>
 		</header>
-		<article
-			class="section-body"
-			v-if="section.paragraphs && section.paragraphs.length > 0"
-		>
-			<button class="close sections" @click="extend($event, false)">
-				<i class="fas fa-times"></i>
-			</button>
-			<div
-				v-for="(paragraph, index) in section.paragraphs"
-				:key="`${section.name}-paragraph-${index}`"
-				v-html="paragraph"
-			></div>
-		</article>
-		<article
-			v-else
-			class="section-body"
-			style="text-align: center; font-size: 1.5rem; padding-bottom: 40px"
-		>
-			<button class="close sections" @click="extend($event, false)">
-				<i class="fas fa-times"></i></button
-			>سيتم تزويدك بالتفاصيل قريبا
-		</article>
+		<!-- <div ref="extended" class="side-article">
+			<header
+				class="section-header-expanded"
+				:data-index="index + 1"
+				:style="
+					!section.paragraphs || section.paragraphs.length == 0
+						? 'height: 100%'
+						: ''
+				"
+			>
+				<figure>
+					<img :src="section.poster" :alt="section.name" class="poster" />
+				</figure>
+				<h3>{{ section.name }}</h3>
+				<p class="extended-p">
+					{{ section.description }}
+				</p>
+				<button
+					class="close"
+					@click="extend($event, false)"
+					v-if="!section.paragraphs || section.paragraphs.length == 0"
+				>
+					<i class="fas fa-times"></i>
+				</button>
+			</header>
+
+			<article
+				class="section-body"
+				v-if="section.paragraphs && section.paragraphs.length > 0"
+			>
+				<button class="close sections" @click="extend($event, false)">
+					<i class="fas fa-times"></i>
+				</button>
+				<div
+					v-for="(paragraph, index) in section.paragraphs"
+					:key="`${section.name}-paragraph-${index}`"
+					v-html="paragraph"
+				></div>
+			</article>
+			<article
+				v-else
+				class="section-body"
+				style="text-align: center; font-size: 1.5rem; padding-bottom: 40px"
+			>
+				<button class="close sections" @click="extend($event, false)">
+					<i class="fas fa-times"></i></button
+				>سيتم تزويدكم بالتفاصيل باقرب وقت
+			</article>
+		</div> -->
 	</section>
 </template>
 
@@ -64,29 +91,30 @@ export default {
 		index: Number,
 	},
 	methods: {
-		extend(e, decision) {
-			if (decision) {
-				if (e.currentTarget.nodeName == "BUTTON") {
-					e.currentTarget.parentElement.parentElement.classList.add("extended");
-				} else {
-					e.currentTarget.classList.add("extended");
-				}
-			} else {
-				if (e.currentTarget.nodeName == "BUTTON") {
-					e.currentTarget.parentElement.parentElement.classList.remove(
-						"extended"
-					);
-				} else {
-					e.currentTarget.classList.remove("extended");
-				}
-			}
-		},
+		// extend(e, decision) {
+		// 	// if (decision) {
+		// 	// 	if (e.currentTarget.nodeName == "BUTTON") {
+		// 	// 		e.currentTarget.parentElement.parentElement.classList.add("extended");
+		// 	// 	} else {
+		// 	// 		e.currentTarget.classList.add("extended");
+		// 	// 	}
+		// 	// } else {
+		// 	// 	if (e.currentTarget.nodeName == "BUTTON") {
+		// 	// 		e.currentTarget.parentElement.parentElement.classList.remove(
+		// 	// 			"extended"
+		// 	// 		);
+		// 	// 	} else {
+		// 	// 		e.currentTarget.classList.remove("extended");
+		// 	// 	}
+		// 	// }
+		// },
 	},
 };
 </script>
 
 <style lang="scss">
 section.service-section {
+	background-color: #27153d;
 	transform: translateX(calc(var(--step-amount) * var(--current-step)));
 	height: 100vh;
 	width: 340px;
@@ -99,6 +127,8 @@ section.service-section {
 }
 //   Section Header
 header.section-header {
+	background-color: #27153d;
+	// visibility: hidden;
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: center;
@@ -195,62 +225,13 @@ article.section-body {
 	text-align: right;
 	background: $color_main;
 	color: $color_text;
-	display: none;
+	// display: none;
 	position: relative !important;
 	> div {
 		padding: 20px;
 	}
 	> p {
 		max-width: 1000px;
-	}
-}
-
-// Extended Section
-section.extended {
-	border: 1px solid $color_text;
-	overflow: auto;
-	header.section-header {
-		height: 90%;
-		&::before {
-			display: none;
-		}
-		p {
-			height: auto;
-			white-space: normal;
-			&.extended-p {
-				display: block;
-			}
-			&.short-p {
-				display: none;
-			}
-		}
-	}
-	article.section-body {
-		display: block;
-	}
-	transform: translateX(var(--far-from-start));
-	width: 100vw;
-	max-width: none;
-	//   height: 100%;
-	background-color: #27153d;
-	z-index: 4;
-	display: block;
-	&::before {
-		opacity: 0;
-	}
-	button.close {
-		display: block;
-	}
-	button.slide-button {
-		display: none;
-	}
-	img {
-		&.poster {
-			opacity: 1 !important;
-		}
-		&.icon {
-			opacity: 0 !important;
-		}
 	}
 }
 </style>
