@@ -22,8 +22,11 @@
 				@expand="expand(index)"
 			/>
 		</div>
+		<div class="back-logo" @click="hideSideArticle()" v-if="showSide">
+			<i class="fa fa-angle-double-right"></i>
+		</div>
 		<div ref="extended" class="side-article" v-if="showSide">
-			<header class="section-header">
+			<header class="section-header-e">
 				<figure>
 					<img
 						:src="sections[sectionIndex].poster"
@@ -35,18 +38,7 @@
 				<p class="extended-p">
 					{{ sections[sectionIndex].description }}
 				</p>
-				<button
-					class="close"
-					@click="extend($event, false)"
-					v-if="
-						!sections[sectionIndex].paragraphs ||
-						sections[sectionIndex].paragraphs.length == 0
-					"
-				>
-					<i class="fas fa-times"></i>
-				</button>
 			</header>
-
 			<article
 				class="section-body"
 				v-if="
@@ -239,11 +231,105 @@ section.services {
 	color: white;
 	// visibility: hidden;
 }
+.back-logo {
+	display: block !important;
+	transform: scaleX(0.6);
+	position: fixed;
+	left: 0;
+	padding: 10px;
+	padding-left: 5px;
+	top: 50%;
+	font-size: 2rem;
+	* {
+		color: rgb(135, 135, 135);
+	}
+	z-index: 5;
+}
+header.section-header-e {
+	background-color: #27153d;
+	// visibility: hidden;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	padding: 40px 10px;
+	height: auto;
+	transition: height 0.2s ease;
+	position: relative;
+	button.close {
+		display: none;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background-image: linear-gradient(
+			60deg,
+			transparent 0%,
+			rgba(255, 255, 255, 0.3) 100%
+		);
+		opacity: 0;
+		transition: opacity 0.2s ease;
+		z-index: 2;
+	}
+	&::before {
+		content: attr(data-index);
+		position: absolute;
+		top: 20px;
+		right: 10px;
+		z-index: 1;
+	}
+	figure {
+		margin: 0;
+		padding: 0;
+		position: relative;
+		img {
+			width: 100%;
+			max-width: 400px;
+			margin: 20px 0;
+			z-index: 3;
+			transition: opacity 0.4s ease-out;
+			&.poster {
+				opacity: 0;
+			}
+			&.icon {
+				width: 80px;
+				position: absolute;
+				margin: auto auto;
+				top: 50%;
+				right: 50%;
+				transform: translate(50%, -50%);
+			}
+		}
+	}
+
+	h3 {
+		height: 50px;
+	}
+	p {
+		width: 90%;
+		max-width: 1000px;
+		font-size: 0.8em;
+		color: var(--accent);
+		line-height: 1.6em;
+		margin: 0 auto;
+		height: 100px;
+		overflow: hidden;
+		&.extended-p {
+			display: none;
+		}
+		&.short-p {
+			display: block;
+		}
+	}
+}
 // Extended Section
 .extended {
 	transform: translateX(0);
-	header.section-header {
-		height: 90%;
+	header.section-header-e {
 		&::before {
 			display: none;
 		}
@@ -298,6 +384,22 @@ section.services {
 		& > div:not(#sections) {
 			display: none;
 		}
+	}
+}
+
+//   Section Body
+article.section-body {
+	width: 100%;
+	text-align: right;
+	background: $color_main;
+	color: $color_text;
+	// display: none;
+	position: relative !important;
+	> div {
+		padding: 20px;
+	}
+	> p {
+		max-width: 1000px;
 	}
 }
 </style>

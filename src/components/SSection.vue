@@ -219,19 +219,4 @@ header.section-header {
 		}
 	}
 }
-//   Section Body
-article.section-body {
-	width: 100%;
-	text-align: right;
-	background: $color_main;
-	color: $color_text;
-	// display: none;
-	position: relative !important;
-	> div {
-		padding: 20px;
-	}
-	> p {
-		max-width: 1000px;
-	}
-}
 </style>
