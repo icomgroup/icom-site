@@ -42,8 +42,11 @@ export default {
 	align-items: center;
 	.image {
 		height: 150px;
+		width: 150px;
 		img {
 			height: 100%;
+			width: 100%;
+			object-fit: cover;
 		}
 	}
 	.contant {
