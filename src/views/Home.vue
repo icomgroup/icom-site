@@ -84,6 +84,15 @@
 			<h3>خدماتنا</h3>
 		</article>
 		<slider id="services" />
+		<section class="articles">
+			<h3>المقالات</h3>
+			<loader v-if="articlesLoading" class="center-loader"></loader>
+			<div class="articles__container" v-else>
+				<div class="articles__item" v-for="(article, i) in articles" :key="i">
+					<article-card-home :article="article"></article-card-home>
+				</div>
+			</div>
+		</section>
 		<article class="contact" id="contact">
 			<h3>اتصل بنا</h3>
 			<div class="container">
@@ -193,6 +202,9 @@ import landing from "../components/landing.vue";
 import slider from "../components/slider.vue";
 import squares from "../components/squares.vue";
 // import monitor from "../components/monitor.vue";
+import ArticleCardHome from "../components/ArticleCardHome.vue";
+import Loader from "../components/Loader.vue";
+import { mapState } from "vuex";
 
 export default {
 	name: "Home",
@@ -201,10 +213,13 @@ export default {
 		FFooter,
 		slider,
 		squares,
+		ArticleCardHome,
+		Loader,
 		// monitor,
 	},
 	data() {
 		return {
+			articlesLoading: true,
 			contactForm: {
 				name: "",
 				email: "",
@@ -285,6 +300,11 @@ export default {
 			}
 		},
 	},
+	computed: {
+		...mapState({
+			articles: (state) => state.articles.articles,
+		}),
+	},
 	mounted() {
 		setInterval(() => {
 			if (this.screens.length > 1) {
@@ -295,6 +315,9 @@ export default {
 				this.deletedScreens = [];
 			}
 		}, 2000);
+		this.$store.dispatch("articles/fetchAll").then(() => {
+			this.articlesLoading = false;
+		});
 	},
 };
 </script>
@@ -414,6 +437,25 @@ h6 {
 	z-index: 3;
 	width: calc(100% - 25px);
 	max-width: 400px !important;
+}
+.articles {
+	h3 {
+		font-size: 2.2em;
+		font-weight: 600;
+	}
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0 6vw;
+	}
+	&__item {
+		width: 50%;
+		margin-bottom: 2rem;
+		padding-left: 7%;
+		@media (max-width: 1020px) {
+			width: 100%;
+		}
+	}
 }
 @media (max-width: 951px) {
 	.webgl {
