@@ -1,4 +1,5 @@
 import { createStore } from "vuex";
+import articles from "./models/articles";
 
 export default createStore({
   state: {
@@ -564,5 +565,7 @@ export default createStore({
   },
   mutations: {},
   actions: {},
-  modules: {},
+  modules: {
+    articles,
+  },
 });

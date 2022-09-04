@@ -72,6 +72,9 @@ export default {
 </script>
 
 <style lang="scss">
+.center-loader {
+	margin: 10rem auto;
+}
 * {
 	box-sizing: border-box;
 	scroll-behavior: smooth;

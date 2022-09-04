@@ -3,8 +3,15 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import axios from 'axios'
 
 import { m } from "./m-labs";
+
+window.axios = axios.create({
+    baseURL: 'https://icom-agency.com/api',
+});
+window.axios.defaults.headers.common['accept-language'] = 'en';
+
 
 $(document).keydown(function (event) {
     if (event.keyCode == 123) { // Prevent F12
