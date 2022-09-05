@@ -88,7 +88,11 @@
 			<h3>المقالات</h3>
 			<loader v-if="articlesLoading" class="center-loader"></loader>
 			<div class="articles__container" v-else>
-				<div class="articles__item" v-for="(article, i) in articles" :key="i">
+				<div
+					class="articles__item"
+					v-for="(article, i) in articles.slice(0, 4)"
+					:key="i"
+				>
 					<article-card-home :article="article"></article-card-home>
 				</div>
 			</div>
