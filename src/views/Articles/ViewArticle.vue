@@ -10,9 +10,7 @@
 				<div class="text-title">
 					{{ article.title }}
 				</div>
-				<div class="text-description">
-					{{ article.description }}
-				</div>
+				<div class="text-description" v-html="article.description"></div>
 				<div class="text-sources">
 					{{ article.sources }}
 				</div>
@@ -133,5 +131,16 @@ export default {
 			margin-top: 3rem;
 		}
 	}
+}
+</style>
+<style>
+.ql-align-right {
+	text-align: right;
+}
+.ql-align-left {
+	text-align: left;
+}
+.ql-align-center {
+	text-align: center;
 }
 </style>

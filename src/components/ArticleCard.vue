@@ -11,19 +11,15 @@
 		<div class="text">
 			<div class="title">{{ article.title }}</div>
 			<router-link :to="{ name: 'view-article', params: { id: article.id } }">
-				<m-button class="slide-button my-btn">اقرأ أكثر</m-button>
+				<button class="slide-button my-btn">اقرأ أكثر</button>
 			</router-link>
 		</div>
 	</div>
 </template>
 
 <script>
-import MButton from "../m-labs/vue/MButton.vue";
 export default {
 	props: ["article"],
-	components: {
-		MButton,
-	},
 };
 </script>
 
@@ -96,5 +92,10 @@ export default {
 			}
 		}
 	}
+}
+.slide-button {
+	font-weight: bold;
+	font-size: 0.8em;
+	font-family: inherit;
 }
 </style>
