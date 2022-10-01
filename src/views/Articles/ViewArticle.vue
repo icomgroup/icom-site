@@ -143,4 +143,13 @@ export default {
 .ql-align-center {
 	text-align: center;
 }
+.text-description img {
+	max-width: 100%;
+}
+@media (max-width: 992px) {
+	.text-description img {
+		display: block;
+		margin: auto;
+	}
+}
 </style>

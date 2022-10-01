@@ -90,7 +90,7 @@
 			<div class="articles__container" v-else>
 				<div
 					class="articles__item"
-					v-for="(article, i) in articles.slice(0, 4)"
+					v-for="(article, i) in articles.reverse().slice(0, 4)"
 					:key="i"
 				>
 					<article-card-home :article="article"></article-card-home>
