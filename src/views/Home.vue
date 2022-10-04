@@ -91,7 +91,7 @@
 				<div
 					class="articles__item"
 					v-for="(article, i) in articles.slice(
-						articles.length - 4,
+						Math.max(articles.length - 4, 0),
 						articles.length
 					)"
 					:key="i"

@@ -15,7 +15,7 @@
 					{{ article.sources }}
 				</div>
 			</div>
-			<div class="image">
+			<div class="image" v-if="false">
 				<img :src="article.image" alt="" />
 			</div>
 		</div>
@@ -95,6 +95,7 @@ export default {
 		flex-direction: column-reverse;
 	}
 	.image {
+		display: none;
 		flex: 1;
 		height: 400px;
 		max-height: 400px;
@@ -144,12 +145,8 @@ export default {
 	text-align: center;
 }
 .text-description img {
+	display: block;
+	margin: auto;
 	max-width: 100%;
-}
-@media (max-width: 992px) {
-	.text-description img {
-		display: block;
-		margin: auto;
-	}
 }
 </style>

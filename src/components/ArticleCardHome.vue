@@ -9,7 +9,7 @@
 			<div class="title">
 				{{ article.title }}
 			</div>
-			<div class="summar">
+			<div class="summary">
 				{{
 					article.summary > 100
 						? article.summary.slice(0, 100) + "..."
@@ -49,6 +49,14 @@ export default {
 	.title {
 		font-size: 1.3rem;
 		font-weight: 600;
+		line-height: 1.8rem;
+		max-height: 5.4rem;
+		overflow: hidden;
+	}
+	.summary {
+		line-height: 1.3rem;
+		max-height: 5.2rem;
+		overflow: hidden;
 	}
 	.my-btn {
 		margin: 0;
