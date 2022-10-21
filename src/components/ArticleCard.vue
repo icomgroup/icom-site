@@ -2,7 +2,7 @@
 	<div class="my-card">
 		<router-link :to="{ name: 'view-article', params: { id: article.id } }">
 			<div class="image">
-				<img :src="article.image" alt="" />
+				<img :src="article.image" :alt="article.title" />
 				<div class="summary">
 					{{ article.summary }}
 				</div>

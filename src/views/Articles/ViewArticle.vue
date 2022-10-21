@@ -15,8 +15,8 @@
 					{{ article.sources }}
 				</div>
 			</div>
-			<div class="image" v-if="false">
-				<img :src="article.image" alt="" />
+			<div class="image">
+				<img :src="article.image" :alt="article.title" />
 			</div>
 		</div>
 		<f-footer></f-footer>
@@ -41,6 +41,11 @@ export default {
 			.then((res) => {
 				this.article = res[0];
 				this.loading = false;
+			})
+			.then(() => {
+				document.querySelectorAll(".text-description img").forEach((e, i) => {
+					e.alt = this.article.title + " " + i;
+				});
 			});
 	},
 };
@@ -95,19 +100,21 @@ export default {
 		flex-direction: column-reverse;
 	}
 	.image {
-		display: none;
 		flex: 1;
-		height: 400px;
-		max-height: 400px;
+		height: 500px;
+		max-height: 500px;
 		margin-bottom: 20px;
 		img {
 			height: 100%;
 			max-width: 100%;
 			object-fit: contain;
 		}
+		@media (max-width: 992px) {
+			display: none;
+		}
 	}
 	.text {
-		flex: 1;
+		flex: 2;
 		text-align: right;
 		padding-inline-end: 20px;
 		@media (max-width: 992px) {
