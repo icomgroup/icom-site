@@ -164,6 +164,14 @@ export default createStore({
               require("../assets/portfolio/mobile/donuts/4.mp4"),
             ],
           },
+          {
+            name: "bravoo app",
+            link: "..",
+            media: [
+              require("../assets/portfolio/mobile/bravo/cover.jpg"),
+              require("../assets/portfolio/mobile/bravo/1.mp4"),
+            ],
+          },
         ],
         paragraphs: [
           `
