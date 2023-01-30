@@ -281,6 +281,22 @@ export default createStore({
             ],
           },
           {
+            name: "almerigan",
+            link: "",
+            media: [
+              require("../assets/portfolio/social/Almerigan/1.jpg"),
+              require("../assets/portfolio/social/Almerigan/2.jpg"),
+              require("../assets/portfolio/social/Almerigan/3.jpg"),
+              require("../assets/portfolio/social/Almerigan/4.jpg"),
+              require("../assets/portfolio/social/Almerigan/5.jpg"),
+              require("../assets/portfolio/social/Almerigan/6.jpg"),
+              require("../assets/portfolio/social/Almerigan/7.jpg"),
+              require("../assets/portfolio/social/Almerigan/8.jpg"),
+              require("../assets/portfolio/social/Almerigan/9.jpg"),
+              require("../assets/portfolio/social/Almerigan/10.jpg"),
+            ],
+          },
+          {
             name: "العطور",
             link: "",
             media: [
