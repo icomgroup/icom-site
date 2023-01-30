@@ -12,7 +12,14 @@
 				</div>
 				<div class="text-description" v-html="article.description"></div>
 				<div class="text-sources">
-					{{ article.sources }}
+					<a
+						:href="'https' + link"
+						v-for="(link, i) in links"
+						:key="i"
+						style="display: block"
+						:target="link"
+						>https{{ link }}</a
+					>
 				</div>
 			</div>
 			<div class="image">
@@ -47,6 +54,13 @@ export default {
 					e.alt = this.article.title + " " + i;
 				});
 			});
+	},
+	computed: {
+		links() {
+			return this.article.sources
+				?.split(/https|http/)
+				?.filter((c) => c.includes("://"));
+		},
 	},
 };
 </script>

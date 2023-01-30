@@ -1,18 +1,20 @@
 <template>
 	<div class="my-card">
-		<router-link :to="{ name: 'view-article', params: { id: article.id } }">
+		<a :href="'/blog/' + article.id">
 			<div class="image">
 				<img :src="article.image" :alt="article.title" />
 				<div class="summary">
 					{{ article.summary }}
 				</div>
 			</div>
-		</router-link>
+		</a>
 		<div class="text">
 			<div class="title">{{ article.title }}</div>
-			<router-link :to="{ name: 'view-article', params: { id: article.id } }">
-				<button class="slide-button my-btn">اقرأ أكثر</button>
-			</router-link>
+			<!-- <router-link :to="{ name: 'view-article', params: { id: article.id } }"> -->
+			<m-button class="slide-button my-btn" :href="'/blog/' + article.id"
+				>اقرأ أكثر</m-button
+			>
+			<!-- </router-link> -->
 		</div>
 	</div>
 </template>

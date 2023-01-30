@@ -29,7 +29,7 @@
 					</m-drop>
 				</li>
 				<li>
-					<m-button type="bordered" href="/articles">المقالات</m-button>
+					<m-button type="bordered" href="/blog">المقالات</m-button>
 				</li>
 				<li v-if="mobileScreen">
 					<m-button

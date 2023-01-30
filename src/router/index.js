@@ -43,19 +43,19 @@ const routes = [
     component: () => import("../views/SEO.vue"),
   },
   {
-    path: "/articles",
+    path: "/blog",
     name: "articles",
     component: () => import("../views/Articles/Articles.vue"),
   },
   {
-    path: "/view-article/:id",
+    path: "/blog/:id",
     name: "view-article",
     component: () => import("../views/Articles/ViewArticle.vue"),
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes,
 });
 
