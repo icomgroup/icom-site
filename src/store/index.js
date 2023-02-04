@@ -17,10 +17,33 @@ export default createStore({
             link: "",
             media: [
               require("../assets/portfolio/web/servant/0.png"),
-              require("../assets/portfolio/web/servant/1.png"),
               require("../assets/portfolio/web/servant/2.png"),
               require("../assets/portfolio/web/servant/3.png"),
               require("../assets/portfolio/web/servant/4.png"),
+            ],
+          },
+          {
+            name: "emkan",
+            link: "",
+            media: [
+              require("../assets/portfolio/web/emkan/cover.jpg"),
+              require("../assets/portfolio/web/emkan/1.mp4"),
+            ],
+          },
+          {
+            name: "bravoo website",
+            link: "",
+            media: [
+              require("../assets/portfolio/web/bravoo/cover.jpg"),
+              require("../assets/portfolio/web/bravoo/1.mp4"),
+            ],
+          },
+          {
+            name: "portfolio website",
+            link: "",
+            media: [
+              require("../assets/portfolio/web/portfolio website/cover.jpg"),
+              require("../assets/portfolio/web/portfolio website/1.mp4"),
             ],
           },
         ],
