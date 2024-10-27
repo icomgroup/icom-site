@@ -291,7 +291,7 @@ export default {
 			}
 			if (!flag) {
 				let request = await axios.post(
-					"https://icom-agency.com/api/add-message",
+					"https://backend.icom-digital.net/api/add-message",
 					this.contactForm
 				);
 

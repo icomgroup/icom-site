@@ -141,7 +141,7 @@ export default {
      
         if(!flag){
       let request = await axios.post(
-        "https://icom-agency.com/api/add-question",
+        "https://backend.icom-digital.net/api/add-question",
         this.messageForm
       );
       // let result = request.data;

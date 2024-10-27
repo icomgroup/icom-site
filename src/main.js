@@ -8,22 +8,23 @@ import axios from 'axios'
 import { m } from "./m-labs";
 
 window.axios = axios.create({
-    baseURL: 'https://icom-agency.com/api',
+    baseURL: 'https://backend.icom-digital.net/api',
+    // baseURL: 'https://icom-agency.com/api',
 });
 window.axios.defaults.headers.common['accept-language'] = 'en';
 
 
-$(document).keydown(function (event) {
-    if (event.keyCode == 123) { // Prevent F12
-        return false;
-    } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I
-        return false;
-    }
-});
+// $(document).keydown(function (event) {
+//     if (event.keyCode == 123) { // Prevent F12
+//         return false;
+//     } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I
+//         return false;
+//     }
+// });
 
-$(document).on("contextmenu", function (e) {
-    e.preventDefault();
-});
+// $(document).on("contextmenu", function (e) {
+//     e.preventDefault();
+// });
 
 createApp(App).use(store).use(router).use(m).mount("#app");
 
@@ -62,6 +63,8 @@ setTimeout(async () => {
     });
 
     scene = new THREE.Scene();
+    console.log("sizes.width  ",sizes.width);
+    console.log("sizes.height  ",sizes.height);
     camera = new THREE.PerspectiveCamera(
         35,
         sizes.width / sizes.height,

@@ -23,7 +23,7 @@
 				</div>
 			</div>
 			<div class="image">
-				<img :src="article.image" :alt="article.title" />
+				<img :src="image" :alt="article.title" />
 			</div>
 		</div>
 		<f-footer></f-footer>
@@ -56,6 +56,9 @@ export default {
 			});
 	},
 	computed: {
+		image(){
+			return 'https://backend.icom-digital.net' + this.article.image;
+		},
 		links() {
 			return this.article.sources
 				?.split(/https|http/)

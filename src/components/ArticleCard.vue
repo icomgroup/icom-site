@@ -2,7 +2,7 @@
 	<div class="my-card">
 		<a :href="'/blog/' + article.id">
 			<div class="image">
-				<img :src="article.image" :alt="article.title" />
+				<img :src="'https://backend.icom-digital.net'+article.image" :alt="article.title" />
 				<div class="summary">
 					{{ article.summary }}
 				</div>
