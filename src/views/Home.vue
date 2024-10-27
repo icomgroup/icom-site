@@ -28,7 +28,7 @@
 				<h2>هل تريد النهوض بعلامتك التجارية نحو التميز !</h2>
 				<h3>icom ستساعدك لتحقيق اهدافك</h3>
 				<div class="buttons">
-					<m-button href="#contact">اتصل بنا</m-button>
+					<m-button href="https://icom-digital.com/#contact">اتصل بنا</m-button>
 					<m-button type="bordered" href="#services">تصفح خدماتنا</m-button>
 				</div>
 			</div>

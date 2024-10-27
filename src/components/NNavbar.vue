@@ -34,7 +34,7 @@
 				<li v-if="mobileScreen">
 					<m-button
 						v-if="mobileScreen"
-						href="#contact"
+						href="https://icom-digital.com/#contact"
 						class="contact-us"
 						>اتصل بنا</m-button
 					>
@@ -66,7 +66,7 @@
 			v-if="!mobileScreen"
 			type="bordered"
 			class="contact-us"
-			href="#contact"
+			href="https://icom-digital.com/#contact"
 			>اتصل بنا</m-button
 		>
 	</nav>
