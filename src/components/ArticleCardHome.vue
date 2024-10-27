@@ -2,7 +2,7 @@
 	<div class="my-card">
 		<router-link :to="{ name: 'view-article', params: { id: article.id } }">
 			<div class="image">
-				<img :src="article.image" :alt="article.title" />
+				<img :src="'https://backend.icom-digital.net'+article.image" :alt="article.title" />
 			</div>
 		</router-link>
 		<div class="contant">
